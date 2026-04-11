@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_blue">#005EA4</color>
+    <color name="primary_container">#0077CE</color>
+    <color name="surface_bg">#F8F9FB</color>
+    <color name="text_on_surface">#191C1E</color>
+    <color name="text_variant">#404752</color>
+    <color name="outline_color">#C0C7D4</color>
+    <color name="secondary_green">#006E1C</color>
+</resources>
