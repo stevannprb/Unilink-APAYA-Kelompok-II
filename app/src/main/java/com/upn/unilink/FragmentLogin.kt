@@ -1,4 +1,4 @@
-package com.yourpackage.unilink
+package com.upn.unilink
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.yourpackage.unilink.databinding.FragmentLoginBinding
+import com.upn.unilink.databinding.FragmentLoginBinding
 
-class LoginFragment : Fragment() {
+class FragmentLogin : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
