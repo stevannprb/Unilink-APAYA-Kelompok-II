@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="24dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/llDateBadge"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_date_badge"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_blue"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="NOV" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_blue"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="26" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvEventTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/text_on_surface"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnJoin"
+            app:layout_constraintStart_toEndOf="@+id/llDateBadge"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Python for Data Science" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:drawablePadding="6dp"
+            android:textColor="@color/text_variant"
+            android:textSize="12sp"
+            app:drawableStartCompat="@android:drawable/ic_menu_mylocation"
+            app:drawableTint="@color/text_variant"
+            app:layout_constraintEnd_toEndOf="@+id/tvEventTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvEventTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvEventTitle"
+            tools:text="Room 402, Engineering" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawablePadding="6dp"
+            android:textColor="@color/text_variant"
+            android:textSize="12sp"
+            app:drawableStartCompat="@android:drawable/ic_menu_recent_history"
+            app:drawableTint="@color/text_variant"
+            app:layout_constraintEnd_toEndOf="@+id/tvEventTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvEventTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocation"
+            tools:text="45 Seats left" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnJoin"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Join"
+            android:textAllCaps="false"
+            android:textColor="@color/text_on_surface"
+            android:textSize="12sp"
+            app:backgroundTint="#E8EAED"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
