@@ -29,6 +29,16 @@ class EventsFragment : Fragment() {
         binding.btnJoinSpotlight.setOnClickListener {
             Toast.makeText(requireContext(), "Mendaftar ke Annual Global Tech Symposium 2024!", Toast.LENGTH_SHORT).show()
         }
+        // Logika klik tombol Notify Me
+        binding.btnNotifyMe.setOnClickListener {
+            val email = binding.etStudentEmail.text.toString()
+            if (email.isNotEmpty() && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                android.widget.Toast.makeText(requireContext(), "Berhasil! Kami akan mengirimkan update ke: $email", android.widget.Toast.LENGTH_SHORT).show()
+                binding.etStudentEmail.text.clear() // Bersihkan kolom input
+            } else {
+                android.widget.Toast.makeText(requireContext(), "Tolong masukkan email yang valid", android.widget.Toast.LENGTH_SHORT).show()
+            }
+        }
 
         // 2. Persiapan Data Dummy untuk RecyclerView
         val dummyEvents = listOf(
