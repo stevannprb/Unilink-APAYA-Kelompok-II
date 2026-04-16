@@ -1,77 +1,72 @@
 package com.upn.unilink
 
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 
 class MainActivity : AppCompatActivity() {
+
+    // Bikin variabel global biar bisa diakses untuk disembunyikan/dimunculkan
+    lateinit var bottomNavigation: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Setup Bottom Navigation
-        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottomNavigation)
+        bottomNavigation = findViewById(R.id.bottomNavigation)
+
+        // 1. SET HALAMAN PERTAMA KALI DIBUKA
+        if (savedInstanceState == null) {
+            hideBottomNav() // Sembunyikan menu bawah saat pertama kali buka app
+            // Catatan: Pastikan kamu sudah buat file Kotlin bernama SplashFragment.kt
+            // Kalau namanya beda (misal: FragmentSplash), tinggal disesuaikan ya.
+            replaceFragment(splash())
+        }
+
+        // 2. LOGIKA KLIK MENU BAWAH (Hanya aktif setelah Login)
         bottomNavigation.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_home -> {
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                    replaceFragment(HomeFragment())
                     true
                 }
                 R.id.nav_events -> {
-                    Toast.makeText(this, "Events", Toast.LENGTH_SHORT).show()
+                    replaceFragment(EventsFragment())
                     true
                 }
                 R.id.nav_add_post -> {
-                    Toast.makeText(this, "Add Post", Toast.LENGTH_SHORT).show()
+                    replaceFragment(AddPostFragment())
                     true
                 }
                 R.id.nav_connect -> {
-                    Toast.makeText(this, "Connect", Toast.LENGTH_SHORT).show()
+                    // replaceFragment(ConnectFragment()) // Buka comment ini kalau file-nya udah ada
                     true
                 }
                 R.id.nav_alerts -> {
-                    Toast.makeText(this, "Alerts", Toast.LENGTH_SHORT).show()
+                    replaceFragment(AlertsFragment())
                     true
                 }
                 else -> false
             }
         }
+    }
 
-        // Setup Category Chips
-        val chipAll = findViewById<Chip>(R.id.chipAll)
-        val chipInternships = findViewById<Chip>(R.id.chipInternships)
-        val chipResearch = findViewById<Chip>(R.id.chipResearch)
-        val chipClubs = findViewById<Chip>(R.id.chipClubs)
-        val chipFeatured = findViewById<Chip>(R.id.chipFeatured)
+    // Fungsi untuk ganti halaman (bisa dipanggil dari dalam Fragment juga)
+    fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
 
-        val chips = listOf(chipAll, chipInternships, chipResearch, chipClubs, chipFeatured)
+    // Fungsi untuk menyembunyikan Menu Bawah
+    fun hideBottomNav() {
+        bottomNavigation.visibility = View.GONE
+    }
 
-        chips.forEach { chip ->
-            chip.setOnClickListener {
-                // Reset all chips to default style
-                chips.forEach { c ->
-                    c.isChecked = false
-                    c.chipBackgroundColor = android.content.res.ColorStateList.valueOf(
-                        when (c.id) {
-                            R.id.chipAll, R.id.chipFeatured -> getColor(R.color.chip_default)
-                            else -> getColor(R.color.chip_default_light)
-                        }
-                    )
-                    c.setTextColor(getColor(R.color.chip_text_default))
-                }
-                // Set selected chip style
-                chip.isChecked = true
-                chip.chipBackgroundColor = android.content.res.ColorStateList.valueOf(
-                    getColor(R.color.chip_selected)
-                )
-                chip.setTextColor(getColor(android.R.color.white))
-
-                Toast.makeText(this, "Selected: ${chip.text}", Toast.LENGTH_SHORT).show()
-            }
-        }
+    // Fungsi untuk memunculkan Menu Bawah (Dipanggil setelah berhasil Login)
+    fun showBottomNav() {
+        bottomNavigation.visibility = View.VISIBLE
     }
 }

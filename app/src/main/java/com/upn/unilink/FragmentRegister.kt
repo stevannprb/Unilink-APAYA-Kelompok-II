@@ -22,9 +22,10 @@ class FragmentRegister : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState) // Ini penting ditambahkan
 
+        // Logika tombol Register
         binding.btnRegister.setOnClickListener {
-
             val name = binding.nameInput.text.toString()
             val email = binding.emailInput.text.toString()
             val password = binding.passwordInput.text.toString()
@@ -43,9 +44,10 @@ class FragmentRegister : Fragment() {
             }
         }
 
+        // Logika tulisan "Login" ditekan
         binding.tvLogin.setOnClickListener {
-            // pindah ke login fragment
-            // findNavController().navigate(R.id.loginFragment)
+            // Minta tolong MainActivity buat pindahin layarnya ke FragmentLogin
+            (requireActivity() as MainActivity).replaceFragment(FragmentLogin())
         }
     }
 

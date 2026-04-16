@@ -24,19 +24,30 @@ class FragmentLogin : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Login Button Action
+        // Logika saat tombol Login ditekan
         binding.btnLogin.setOnClickListener {
             val email = binding.emailInput.text.toString()
             if (email.isNotEmpty()) {
                 Toast.makeText(context, "Welcome back, $email", Toast.LENGTH_SHORT).show()
+
+                // 1. Panggil MainActivity
+                val mainActivity = requireActivity() as MainActivity
+
+                // 2. Munculkan kembali Menu Navigasi Bawah!
+                mainActivity.showBottomNav()
+
+                // 3. Pindah ke halaman Home
+                mainActivity.replaceFragment(HomeFragment())
+
             } else {
                 binding.emailLayout.error = "Please enter your email"
             }
         }
 
-        // Navigation to Register (Contoh)
+        // Sekalian aku tambahin logika buat tulisan Register di bawah
+        // Biar kalau user salah pencet, dia bisa balik ke halaman Register
         binding.tvRegister.setOnClickListener {
-            // Logika pindah fragment register
+            (requireActivity() as MainActivity).replaceFragment(FragmentRegister())
         }
     }
 
