@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/foto_ale"
+                    app:shapeAppearanceOverlay="@style/Rounded2XL" /> <TextView
+                android:id="@+id/statusOnline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/imgProfile"
+                android:layout_alignEnd="@id/imgProfile"
+                android:background="#006E1C"
+                android:paddingHorizontal="6dp"
+                android:paddingVertical="2dp"
+                android:text="ONLINE"
+                android:textColor="#FFFFFF"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:layout_margin="2dp" />
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Marcus Thorne"
+                android:textColor="#191C1E"
+                android:textSize="18sp" />
+
+        <TextView
+                android:id="@+id/txtRole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alumni • Class of '21"
+                android:textColor="#006E1C"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        <TextView
+                android:id="@+id/txtBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Senior Product Designer focusing on sustainable tech..."
+                android:textColor="#404752"
+                android:textSize="13sp" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConnect"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="16dp"
+                android:text="Connect"
+                android:textAllCaps="false"
+                app:backgroundTint="#005EA4"
+                app:cornerRadius="16dp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
