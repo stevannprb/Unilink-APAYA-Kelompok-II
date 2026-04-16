@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/layoutTombol"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="32dp"
+                android:text="Buat Postingan"
+                android:textColor="@color/text_on_surface"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="8dp"
+                android:text="Isi detail di bawah ini untuk membagikan program baru."
+                android:textColor="@color/text_variant"
+                android:textSize="14sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="JUDUL POSTINGAN"
+                        android:textColor="@color/text_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:boxBackgroundColor="#E8EAED"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etJudul"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Contoh: Lowongan UX Research"
+                            android:padding="16dp"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TANGGAL MULAI"
+                                android:textColor="@color/text_variant"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                app:boxBackgroundColor="#E8EAED"
+                                app:boxCornerRadiusTopEnd="12dp"
+                                app:boxCornerRadiusTopStart="12dp"
+                                app:boxCornerRadiusBottomEnd="12dp"
+                                app:boxCornerRadiusBottomStart="12dp"
+                                app:boxStrokeWidth="0dp"
+                                app:hintEnabled="false">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etTanggalMulai"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="Pilih Tanggal"
+                                    android:padding="16dp"
+                                    android:textSize="14sp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="TANGGAL AKHIR"
+                                android:textColor="@color/text_variant"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                app:boxBackgroundColor="#E8EAED"
+                                app:boxCornerRadiusTopEnd="12dp"
+                                app:boxCornerRadiusTopStart="12dp"
+                                app:boxCornerRadiusBottomEnd="12dp"
+                                app:boxCornerRadiusBottomStart="12dp"
+                                app:boxStrokeWidth="0dp"
+                                app:hintEnabled="false">
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etTanggalAkhir"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:focusable="false"
+                                    android:hint="Pilih Tanggal"
+                                    android:padding="16dp"
+                                    android:textSize="14sp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/bg_date_badge"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            android:text="DETAIL SPESIFIK"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            app:boxBackgroundColor="@android:color/white"
+                            app:boxCornerRadiusTopEnd="8dp"
+                            app:boxCornerRadiusTopStart="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:boxCornerRadiusBottomStart="8dp"
+                            app:boxStrokeWidth="0dp"
+                            app:hintEnabled="false">
+                            <AutoCompleteTextView
+                                android:id="@+id/cbJenisPekerjaan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Jenis Pekerjaan"
+                                android:inputType="none"
+                                android:padding="16dp"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            app:boxBackgroundColor="@android:color/white"
+                            app:boxCornerRadiusTopEnd="8dp"
+                            app:boxCornerRadiusTopStart="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:boxCornerRadiusBottomStart="8dp"
+                            app:boxStrokeWidth="0dp"
+                            app:hintEnabled="false">
+                            <AutoCompleteTextView
+                                android:id="@+id/cbPosisi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Posisi / Peran"
+                                android:inputType="none"
+                                android:padding="16dp"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp"
+                            app:boxBackgroundColor="@android:color/white"
+                            app:boxCornerRadiusTopEnd="8dp"
+                            app:boxCornerRadiusTopStart="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:boxCornerRadiusBottomStart="8dp"
+                            app:boxStrokeWidth="0dp"
+                            app:hintEnabled="false">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etPerusahaan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Perusahaan / Organisasi"
+                                android:padding="16dp"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxBackgroundColor="@android:color/white"
+                            app:boxCornerRadiusTopEnd="8dp"
+                            app:boxCornerRadiusTopStart="8dp"
+                            app:boxCornerRadiusBottomEnd="8dp"
+                            app:boxCornerRadiusBottomStart="8dp"
+                            app:boxStrokeWidth="0dp"
+                            app:hintEnabled="false">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etLokasi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Lokasi"
+                                android:padding="16dp"
+                                android:textSize="14sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="DESKRIPSI POSTINGAN"
+                        android:textColor="@color/text_variant"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:boxBackgroundColor="#E8EAED"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxStrokeWidth="0dp"
+                        app:hintEnabled="false">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDeskripsi"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:gravity="top|start"
+                            android:hint="Tuliskan detail persyaratan..."
+                            android:inputType="textMultiLine"
+                            android:padding="16dp"
+                            android:textSize="14sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="LAMPIRKAN FILE (Opsional)"
+                            android:textColor="@color/text_variant"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/btnUploadFile"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentEnd="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_attachment" />
+                    </RelativeLayout>
+                    <TextView
+                        android:id="@+id/tvNamaFile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Belum ada file dipilih"
+                        android:textColor="#9AA0A6"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/layoutTombol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:elevation="16dp"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPosting"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Posting"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primary_blue"
+            app:cornerRadius="16dp"
+            app:icon="@android:drawable/ic_menu_send"
+            app:iconGravity="textEnd" />
+    </LinearLayout>
+
+</RelativeLayout>
