@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         // 1. SET HALAMAN PERTAMA KALI DIBUKA
         if (savedInstanceState == null) {
             hideBottomNav() // Sembunyikan menu bawah saat pertama kali buka app
-            // Catatan: Pastikan kamu sudah buat file Kotlin bernama SplashFragment.kt
-            // Kalau namanya beda (misal: FragmentSplash), tinggal disesuaikan ya.
             replaceFragment(splash())
         }
 
@@ -41,7 +39,8 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_connect -> {
-                    // replaceFragment(ConnectFragment()) // Buka comment ini kalau file-nya udah ada
+                    // ✅ INI YANG DIUBAH: Garis miring dihapus dan panggil Connect()
+                    replaceFragment(connect())
                     true
                 }
                 R.id.nav_alerts -> {

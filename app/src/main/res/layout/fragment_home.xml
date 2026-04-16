@@ -57,7 +57,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_avatar_placeholder" />
+                        android:src="@drawable/foto_stevan" />
             </com.google.android.material.card.MaterialCardView>
 
         </com.google.android.material.appbar.MaterialToolbar>
